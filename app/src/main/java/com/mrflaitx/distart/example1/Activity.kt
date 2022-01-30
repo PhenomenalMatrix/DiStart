@@ -1,11 +1,7 @@
-package com.example.dependencyinjectionstart.example1
+package com.mrflaitx.distart.example1
 
 class Activity {
 
-    lateinit var computer: Computer
-    lateinit var keyboard: Keyboard
+    val computer = Computer()
 
-    init {
-        Component().inject(this)
-    }
 }
