@@ -1,8 +1,26 @@
-package com.example.dependencyinjectionstart.example1
+package com.mrflaitx.distart.example1
 
-import com.mrflaitx.distart.example1.*
-
+//class for creating dependencies
 class Component {
+    fun getComputer(): Computer{
+        val monitor = Monitor()
+        val keyboard = Keyboard()
+        val mouse = Mouse()
+        val computerTower = ComputerTower(
+            Storage(),
+            Memory(),
+            Processor()
+        )
+        return Computer(
+            monitor, computerTower, keyboard, mouse
+        )
+    }
 
 
+    fun inject(activity: Activity){
+        //присваиваем значение извне
+        activity.computer = getComputer()
+        //example keyBoard
+        activity.keyboard = Keyboard()
+    }
 }

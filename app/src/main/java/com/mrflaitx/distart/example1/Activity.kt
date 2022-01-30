@@ -1,16 +1,17 @@
 package com.mrflaitx.distart.example1
 
 class Activity {
-    val monitor = Monitor()
-    val keyboard = Keyboard()
-    val mouse = Mouse()
-    val computerTower = ComputerTower(
-        Storage(),
-        Memory(),
-        Processor()
-    )
-    val computer = Computer(
-        monitor, computerTower, keyboard, mouse
-    )
+//    не есть хорошо(из-за того что активити сама запрашивает зависимость от компонента)
+//    val computer: Computer = Component().getComputer()
+
+    // для присваивание значение извне
+    lateinit var computer: Computer
+    //Exaple keyBoard
+    lateinit var keyboard: Keyboard
+
+    //onCreate
+    init {
+        Component().inject(this)
+    }
 
 }
