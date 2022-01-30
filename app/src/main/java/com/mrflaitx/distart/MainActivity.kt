@@ -11,5 +11,6 @@ class MainActivity : AppCompatActivity() {
         val activity = Activity()
             //проверяем запуском приложения (инициализацию клавы)
         activity.keyboard.toString()
+        activity.mouse.toString()
     }
 }

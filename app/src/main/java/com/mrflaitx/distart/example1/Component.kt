@@ -17,7 +17,7 @@ class Component {
     }
 
 
-    fun inject(activity: Activity){
-        activity.keyboard = Keyboard()
-    }
+//    fun inject(activity: Activity){
+//        activity.keyboard = Keyboard()
+//    }
 }

@@ -4,17 +4,20 @@ import javax.inject.Inject
 
 class Activity {
 
-    //Научимся inject-ить обычнай класс в котором нет ничего в конструкторе
+    //private не можем сделать так как обращаемся к этому классу в мейн
+    //если бы не было то private
+//    val daggerComp = DaggerNewComponent.create()
+//     val keyboard: Keyboard = daggerComp.getKeyboard()
+//    val mouse: Mouse = daggerComp.getMouse()
     @Inject
-    //Переменная должна быть паблик иначе дагер не сможет сам вставить
     lateinit var keyboard: Keyboard
 
-    //onCreate
+    @Inject
+    lateinit var mouse: Mouse
+
     init {
-//        Component().inject(this)
         DaggerNewComponent.create().inject(this)
     }
-
 }
 
 // Для чего используем DI если можно все в ручную ?
