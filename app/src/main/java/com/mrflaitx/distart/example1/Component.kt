@@ -18,9 +18,6 @@ class Component {
 
 
     fun inject(activity: Activity){
-        //присваиваем значение извне
-        activity.computer = getComputer()
-        //example keyBoard
         activity.keyboard = Keyboard()
     }
 }
